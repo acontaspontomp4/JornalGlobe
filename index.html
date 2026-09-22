@@ -55,11 +55,6 @@
 
   <style>
     /* Newspaper texture and borders */
-    .border-double-editorial {
-      border-style: double;
-      border-width: 4px;
-    }
-    
     .newsprint-texture {
       background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
       background-size: 16px 16px;
@@ -136,13 +131,13 @@
       </h1>
       
       <div class="mt-2 py-1 border-y border-neutral-300 dark:border-neutral-800 flex items-center justify-between text-[11px] font-mono text-neutral-600 dark:text-neutral-400">
-        <span>VOL. CXVI • Nº 4.819</span>
+        <span>VOL. CXVI • Nº 4.820</span>
         <span class="font-semibold text-emerald-700 dark:text-emerald-400 uppercase tracking-wide">Dossiê Clima Global</span>
         <span>ACESSO LIVRE</span>
       </div>
 
       <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300 font-serif italic max-w-md mx-auto leading-relaxed">
-        Diretório curado de portais oficiais, sensores orbitais, dados abertos e pactos multilaterais sobre as mudanças climáticas.
+        Diretório curado de portais oficiais, sensores orbitais, dados abertos e comparações planetárias sobre as transformações do clima.
       </p>
     </div>
 
@@ -154,7 +149,7 @@
         <input 
           type="text" 
           id="search-input"
-          placeholder="Pesquisar órgão, dados de satélite, acordos..." 
+          placeholder="Pesquisar órgão, imagens de satélite, dados..." 
           class="w-full bg-white dark:bg-neutral-900 border border-paper-200 dark:border-paper-800 rounded-lg pl-10 pr-9 py-2 text-sm text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 dark:focus:ring-white transition shadow-sm font-sans"
         >
         <button id="clear-search" class="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200 hidden" aria-label="Limpar pesquisa">
@@ -165,13 +160,13 @@
       <!-- Category Filter Pills -->
       <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-xs font-medium">
         <button class="filter-btn active px-3 py-1.5 rounded-full border border-neutral-900 dark:border-white bg-neutral-900 dark:bg-white text-white dark:text-neutral-950 whitespace-nowrap transition" data-category="all">
-          Todos (5)
-        </button>
-        <button class="filter-btn px-3 py-1.5 rounded-full border border-paper-200 dark:border-paper-800 bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 whitespace-nowrap transition" data-category="brasil">
-          Brasil &amp; Amazônia
+          Todos (6)
         </button>
         <button class="filter-btn px-3 py-1.5 rounded-full border border-paper-200 dark:border-paper-800 bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 whitespace-nowrap transition" data-category="ciencia">
           Ciência &amp; Satélites
+        </button>
+        <button class="filter-btn px-3 py-1.5 rounded-full border border-paper-200 dark:border-paper-800 bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 whitespace-nowrap transition" data-category="brasil">
+          Brasil &amp; Amazônia
         </button>
         <button class="filter-btn px-3 py-1.5 rounded-full border border-paper-200 dark:border-paper-800 bg-white dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300 hover:border-neutral-400 dark:hover:border-neutral-600 whitespace-nowrap transition" data-category="global">
           Acordos Globais
@@ -190,12 +185,11 @@
           <div class="flex items-start justify-between gap-3 mb-2">
             <div class="flex items-center gap-2 flex-wrap">
               <span class="inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 font-semibold border border-blue-200 dark:border-blue-900">
-                <i data-lucide="shield-check" class="w-3 h-3 text-blue-600 dark:text-blue-400"></i> Agência Federal • EUA
+                <i data-lucide="shield-check" class="w-3 h-3 text-blue-600 dark:text-blue-400"></i> Agência Espacial • EUA
               </span>
-              <span class="text-[10px] uppercase font-mono text-neutral-400 dark:text-neutral-500">Dados em Tempo Real</span>
+              <span class="text-[10px] uppercase font-mono text-neutral-400 dark:text-neutral-500">Dados Globais</span>
             </div>
             
-            <!-- Direct Actions -->
             <div class="flex items-center gap-1.5 text-neutral-400">
               <button onclick="copyToClipboard('https://climate.nasa.gov', 'NASA Climate Change')" class="p-1 hover:text-neutral-900 dark:hover:text-white transition" title="Copiar URL">
                 <i data-lucide="copy" class="w-3.5 h-3.5"></i>
@@ -220,13 +214,56 @@
 
         <div class="mt-3 pt-2.5 border-t border-paper-100 dark:border-neutral-800/80 flex items-center justify-between text-[11px] text-neutral-500">
           <span class="flex items-center gap-1 font-mono text-[10px]">
-            <i data-lucide="satellite" class="w-3 h-3 text-cyan-600"></i> climate.nasa.gov
+            <i data-lucide="satellite" class="w-3 h-3 text-blue-600"></i> climate.nasa.gov
           </span>
           <span class="bg-neutral-100 dark:bg-neutral-800 px-2 py-0.5 rounded text-[10px] font-mono">Ciência Orbitária</span>
         </div>
       </article>
 
-      <!-- 2. IPCC -->
+      <!-- 2. NASA Images of Change (NOVO) -->
+      <article class="link-card group bg-white dark:bg-neutral-900 rounded-xl p-4 border border-paper-200 dark:border-paper-800 shadow-sm hover:shadow-md hover:border-neutral-400 dark:hover:border-neutral-600 flex flex-col justify-between"
+               data-title="NASA Images of Change Imagens da Mudança Satélite Antes e Depois Geleiras Seca Queimadas Urbanização"
+               data-categories="ciencia">
+        <div>
+          <div class="flex items-start justify-between gap-3 mb-2">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="inline-flex items-center gap-1 text-[11px] font-mono px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-semibold border border-indigo-200 dark:border-indigo-900">
+                <i data-lucide="images" class="w-3 h-3 text-indigo-600 dark:text-indigo-400"></i> Visual Interativo • NASA
+              </span>
+              <span class="text-[10px] uppercase font-mono text-neutral-400 dark:text-neutral-500">Antes &amp; Depois</span>
+            </div>
+
+            <div class="flex items-center gap-1.5 text-neutral-400">
+              <button onclick="copyToClipboard('https://climate.nasa.gov/images-of-change/', 'NASA Images of Change')" class="p-1 hover:text-neutral-900 dark:hover:text-white transition" title="Copiar URL">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              </button>
+              <a href="https://climate.nasa.gov/images-of-change/" target="_blank" rel="noopener noreferrer" class="p-1 hover:text-neutral-900 dark:hover:text-white transition" title="Abrir página oficial">
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <a href="https://climate.nasa.gov/images-of-change/" target="_blank" rel="noopener noreferrer" class="block group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+            <h2 class="font-serif text-lg font-bold text-neutral-900 dark:text-neutral-100 leading-snug flex items-center justify-between">
+              <span>NASA Images of Change</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-neutral-400"></i>
+            </h2>
+          </a>
+          
+          <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1.5 line-clamp-2 leading-relaxed font-sans">
+            Galeria interativa de imagens orbitais comparando o planeta em intervalos de décadas: retração de geleiras, secas extremas, desmatamento e expansão urbana.
+          </p>
+        </div>
+
+        <div class="mt-3 pt-2.5 border-t border-paper-100 dark:border-neutral-800/80 flex items-center justify-between text-[11px] text-neutral-500">
+          <span class="flex items-center gap-1 font-mono text-[10px]">
+            <i data-lucide="layers" class="w-3 h-3 text-indigo-600"></i> climate.nasa.gov/images-of-change
+          </span>
+          <span class="bg-neutral-100 dark:bg-neutral-800 px-2 py-0.5 rounded text-[10px] font-mono">Comparação Temporal</span>
+        </div>
+      </article>
+
+      <!-- 3. IPCC -->
       <article class="link-card group bg-white dark:bg-neutral-900 rounded-xl p-4 border border-paper-200 dark:border-paper-800 shadow-sm hover:shadow-md hover:border-neutral-400 dark:hover:border-neutral-600 flex flex-col justify-between"
                data-title="IPCC Intergovernmental Panel on Climate Change Painel Intergovernamental Relatórios Científicos Avaliação Síntese"
                data-categories="global ciencia">
@@ -251,13 +288,13 @@
 
           <a href="https://www.ipcc.ch" target="_blank" rel="noopener noreferrer" class="block group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
             <h2 class="font-serif text-lg font-bold text-neutral-900 dark:text-neutral-100 leading-snug flex items-center justify-between">
-              <span>IPCC — Intergovernmental Panel on Climate Change</span>
+              <span>IPCC — Painel Intergovernamental</span>
               <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-neutral-400"></i>
             </h2>
           </a>
           
           <p class="text-xs text-neutral-600 dark:text-neutral-400 mt-1.5 line-clamp-2 leading-relaxed font-sans">
-            A principal autoridade científica do planeta em avaliações climáticas. Publicações dos relatórios de avaliação abrangente (AR6/AR7) e sumários para formuladores de políticas.
+            A principal autoridade científica do planeta em avaliações climáticas. Publicações dos relatórios de avaliação abrangente e sumários para formuladores de políticas.
           </p>
         </div>
 
@@ -269,7 +306,7 @@
         </div>
       </article>
 
-      <!-- 3. UN Climate Action (ONU) -->
+      <!-- 4. UN Climate Action (ONU) -->
       <article class="link-card group bg-white dark:bg-neutral-900 rounded-xl p-4 border border-paper-200 dark:border-paper-800 shadow-sm hover:shadow-md hover:border-neutral-400 dark:hover:border-neutral-600 flex flex-col justify-between"
                data-title="UN Climate Action ONU Ação Climática Nações Unidas Acordo de Paris COP Net Zero"
                data-categories="global">
@@ -312,7 +349,7 @@
         </div>
       </article>
 
-      <!-- 4. INPE (Brasil) -->
+      <!-- 5. INPE (Brasil) -->
       <article class="link-card group bg-white dark:bg-neutral-900 rounded-xl p-4 border border-paper-200 dark:border-paper-800 shadow-sm hover:shadow-md hover:border-neutral-400 dark:hover:border-neutral-600 flex flex-col justify-between"
                data-title="INPE Instituto Nacional de Pesquisas Espaciais Brasil Desmatamento Queimadas Prodes Deter Amazônia Cerrado"
                data-categories="brasil ciencia">
@@ -355,7 +392,7 @@
         </div>
       </article>
 
-      <!-- 5. MMA (Ministério do Meio Ambiente e Mudança do Clima) -->
+      <!-- 6. MMA (Ministério do Meio Ambiente e Mudança do Clima) -->
       <article class="link-card group bg-white dark:bg-neutral-900 rounded-xl p-4 border border-paper-200 dark:border-paper-800 shadow-sm hover:shadow-md hover:border-neutral-400 dark:hover:border-neutral-600 flex flex-col justify-between"
                data-title="MMA Ministério do Meio Ambiente e Mudança do Clima Governo Federal Brasil Políticas Públicas Plano Clima Legislação"
                data-categories="brasil global">
@@ -402,7 +439,7 @@
       <div id="no-results" class="hidden text-center py-10 px-4 border border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl">
         <i data-lucide="search-x" class="w-8 h-8 text-neutral-400 mx-auto mb-2"></i>
         <h3 class="font-serif font-bold text-neutral-800 dark:text-neutral-200">Nenhuma fonte encontrada</h3>
-        <p class="text-xs text-neutral-500 mt-1">Tente pesquisar por outros termos como "INPE", "ONU" ou "NASA".</p>
+        <p class="text-xs text-neutral-500 mt-1">Tente pesquisar por outros termos como "NASA", "INPE", "Imagens" ou "ONU".</p>
       </div>
 
     </div>
